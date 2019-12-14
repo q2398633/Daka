@@ -1,13 +1,16 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <title>打卡中心</title>
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
-    <link rel="stylesheet" type="text/css" href="./layui/css/layui.css" />
-    <style>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no,
+            width=device-width">
+        <title>打卡中心</title>
+        <link rel="stylesheet"
+            href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"
+            />
+        <link rel="stylesheet" type="text/css" href="./layui/css/layui.css" />
+        <style>
         html,body{
             height:100%;
 			text-align:center
@@ -105,31 +108,35 @@
 			font-size: 12px;
 		}
     </style>
-	<body>
-		
-		<div id='container'></div>
-		<div class="info">
-			<h4 id='status'></h4><hr>
-			<p id='result'></p><hr>
-		</div>
-	
+        <body>
 
-	<div id="box">
-		<div id='time'>上海XXXXXXXXXXX有限公司</div>
-		<button id='signbtn' class="layui-btn layui-btn-normal">考勤签到</button><br>
-		<div id="place" type="button" class="layui-btn-radius">非办公地点</div>
-		<div id='distance'>系统正在定位中</div>
-		<div id='location'>系统正在定位中</div>
-	</div>	
-	<input type="hidden" id="isonoff" name="isonoff" value="true">
-	<input type="hidden" id="userid" name="userid" value="0">
-	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-	<script src="./layui/layui.js"></script>
-	<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
-	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=你自己的KEY"></script>
-    <script src="https://webapi.amap.com/maps?v=1.4.15&key=你自己的KEY&plugin=AMap.CircleEditor"></script>
-    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
-	<script type="text/javascript">
+            <div id='container'></div>
+            <div class="info">
+                <h4 id='status'></h4><hr>
+                <p id='result'></p><hr>
+            </div>
+
+
+            <div id="box">
+                <div id='time'>石家庄市寅卯科技有限公司</div>
+                <button id='signbtn' class="layui-btn layui-btn-normal">考勤签到</button><br>
+                <div id="place" type="button" class="layui-btn-radius">非办公地点</div>
+                <div id='distance'>系统正在定位中</div>
+                <div id='location'>系统正在定位中</div>
+            </div>
+            <input type="hidden" id="isonoff" name="isonoff" value="true">
+            <input type="hidden" id="userid" name="userid" value="0">
+            <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+            <script src="./layui/layui.js"></script>
+            <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+            <script type="text/javascript"
+                src="https://webapi.amap.com/maps?v=1.4.15&key=3554afad07a8ac3ddedf7b201e678de9"></script>
+            <script
+                src="https://webapi.amap.com/maps?v=1.4.15&key=3554afad07a8ac3ddedf7b201e678de9
+                &plugin=AMap.CircleEditor"></script>
+            <script
+                src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+            <script type="text/javascript">
 	
 		var map = new AMap.Map('container', {
 			resizeEnable: true
@@ -168,7 +175,7 @@
 			var location = data.formattedAddress;//具体街道位置信息
 			console.log(getposition);
 			
-			var shanghaizone = [121.22625,31.36925];//设置的签到点
+			var shanghaizone = [114.52269,38.05818];//设置的签到点
 			//计算当前位置与考勤点距离
 			var distance = AMap.GeometryUtil.distance(getposition,shanghaizone).toFixed(0);
 		
@@ -225,7 +232,7 @@
 		}
 
 	</script>
-	 <script>
+            <script>
         setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
         now = new Date(),hour = now.getHours(); 
 		if(hour>12){ 
@@ -235,5 +242,5 @@
 		
 		
     </script>
-</body>
-</html>
+        </body>
+    </html>
